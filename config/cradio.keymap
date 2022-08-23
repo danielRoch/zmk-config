@@ -61,7 +61,7 @@
 //        |           |             |    END    |   HOME   | LSHIFT | # |  RSHIFT  | RCONTROL | INSERT  | APPLICATION |  NUMBER_L |
 //                                              |  BASE_L  |  LGUI  | # |   RALT   | SYMBOL_L |
 		bindings = <
-		&kp ESCAPE &kp K_APP &kp LC(END) &kp LC(HOME) &kp LC(LS(LALT)) /**/ &kp RG(LEFT) &kp RC(RS(TAB)) &kp RC(TAB) &KP RG(RIGHT) &kp BACKSPACE 
+		&kp ESCAPE &kp K_APP &kp LC(END) &kp LC(HOME) &kp LC(LS(LALT)) /**/ &kp RG(LEFT) &kp RC(RS(TAB)) &kp RC(TAB) &kp RG(RIGHT) &kp BACKSPACE 
 		&kp TAB    &kp PSCRN &kp PG_DN   &kp PG_UP    &kp DELETE       /**/ &kp LEFT     &kp DOWN        &kp UP      &kp RIGHT     &kp RETURN
 		&trans     &trans    &kp END     &kp HOME     &kp LSHIFT       /**/ &kp RSHFT    &kp RCTRL       &kp INSERT  &kp K_APP     &tog 3
 					                     &tog 0       &kp LGUI         /**/ &kp SPC      &tog 1
