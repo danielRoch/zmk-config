@@ -13,6 +13,7 @@
 #define symbol 1
 #define movement 2
 #define number 3
+#define fkeys 4
 
 &mt {
    flavor = "tap-preferred";
@@ -50,7 +51,7 @@
 		&kp ESCAPE &kp AT_SIGN &kp HASH         &kp DOLLAR        &kp PERCENT /**/ &kp CARET        &kp AMPERSAND        &kp ASTERISK          &kp SEMICOLON     &kp BACKSPACE 
 		&kp TAB    &kp EQUAL   &kp SINGLE_QUOTE &kp DOUBLE_QUOTES &kp GRAVE   /**/ &kp BACKSLASH    &kp LEFT_BRACE       &kp RIGHT_BRACE       &kp PIPE          &kp RETURN
 		&kp TILDE  &kp MINUS   &kp PLUS         &kp EXCLAMATION   &kp SLASH   /**/ &kp LEFT_BRACKET &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp RIGHT_BRACKET &tog 3 
-					                            &tog 0            &kp LSHFT   /**/ &kp RALT         &tog 3 
+					                            &tog 0            &kp LSHFT   /**/ &kp RALT         &tog 4 
 		>;
 		};
 		
@@ -58,13 +59,13 @@
 // ------------------------------------------------------------------------------
 //        |    ESC    | APPLICATION | END PAGE  | BEG PAGE |   MEH  | # | WIN LEFT | PREV TAB | NXT TAB |  WIN RIGHT  | BACKSPACE |
 //        |    TAB    |  PRINT SCR  | PAGE DOWN | PAGE UP  | DELETE | # |   LEFT   |   DOWN   |    UP   |    RIGHT    |  RETURN   |
-//        |           |             |    END    |   HOME   | LSHIFT | # |  RSHIFT  | RCONTROL | INSERT  | APPLICATION |  NUMBER_L |
+//        |  BT_PREV  |   BT_NEXT   |    END    |   HOME   | LSHIFT | # |  RSHIFT  | RCONTROL | INSERT  | APPLICATION |  NUMBER_L |
 //                                              |  BASE_L  |  LGUI  | # |   RALT   | SYMBOL_L |
 		bindings = <
-		&kp ESCAPE &kp K_APP &kp LC(END) &kp LC(HOME) &kp LC(LS(LALT)) /**/ &kp RG(LEFT) &kp RC(RS(TAB)) &kp RC(TAB) &kp RG(RIGHT) &kp BACKSPACE 
-		&kp TAB    &kp PSCRN &kp PG_DN   &kp PG_UP    &kp DELETE       /**/ &kp LEFT     &kp DOWN        &kp UP      &kp RIGHT     &kp RETURN
-		&trans     &trans    &kp END     &kp HOME     &kp LSHIFT       /**/ &kp RSHFT    &kp RCTRL       &kp INSERT  &kp K_APP     &tog 3
-					                     &tog 0       &kp LGUI         /**/ &kp SPC      &tog 1
+		&kp ESCAPE &kp K_APP  &kp LC(END) &kp LC(HOME) &kp LC(LS(LALT)) /**/ &kp RG(LEFT) &kp RC(RS(TAB)) &kp RC(TAB) &kp RG(RIGHT) &kp BACKSPACE 
+		&kp TAB    &kp PSCRN  &kp PG_DN   &kp PG_UP    &kp DELETE       /**/ &kp LEFT     &kp DOWN        &kp UP      &kp RIGHT     &kp RETURN
+		&bt BT_PRV &bt BT_NXT &kp END     &kp HOME     &kp LSHIFT       /**/ &kp RSHFT    &kp RCTRL       &kp INSERT  &kp K_APP     &tog 3
+					                      &tog 0       &kp LGUI         /**/ &kp SPC      &tog 1
 		>;
 		};	
 		
@@ -79,6 +80,20 @@
 		&kp TAB    &kp C_MUTE       &kp C_VOL_DN   &kp C_VOL_UP &kp PLUS       /**/ &kp EQUAL &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp RETURN
 		&kp TILDE  &kp ASTERISK     &kp C_BRI_DN   &kp C_BRI_UP &kp DOT        /**/ &kp KP_N0 &kp KP_N1 &kp KP_N2 &kp KP_N3 &tog 2   
 					                               &tog 0       &kp LGUI       /**/ &kp RALT  &tog 1
+		>;
+		};
+
+        fkeys { /*      LAYER 4      */
+// ------------------------------------------------------------------------------
+//        |  |  |  |        |          | # |          |   F9   | F10 | F11 | F12 |
+//        |  |  |  |        |          | # |          |   F5   | F6  | F7  | F8  |
+//        |  |  |  |        |          | # |          |   F1   | F2  | F3  | F4  |
+//                 | BASE_L | SYMBOL_L | # | NUMBER_L | MOVE_L |
+		bindings = <
+		&trans &trans &trans &trans &trans /**/ &trans &kp F9 &kp F10 &kp F11 &kp F12
+		&trans &trans &trans &trans &trans /**/ &trans &kp F5 &kp F6  &kp F7  &kp F8
+		&trans &trans &trans &trans &trans /**/ &trans &kp F1 &kp F2  &kp F3  &kp F4   
+					         &tog 0 &tog 1 /**/ &tog 2 &tog 3
 		>;
 		};	
         
