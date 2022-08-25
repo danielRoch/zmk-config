@@ -59,13 +59,13 @@
 // ------------------------------------------------------------------------------
 //        |    ESC    | APPLICATION | END PAGE  | BEG PAGE |   MEH  | # | WIN LEFT | PREV TAB | NXT TAB |  WIN RIGHT  | BACKSPACE |
 //        |    TAB    |  PRINT SCR  | PAGE DOWN | PAGE UP  | DELETE | # |   LEFT   |   DOWN   |    UP   |    RIGHT    |  RETURN   |
-//        |  BT_PREV  |   BT_NEXT   |    END    |   HOME   | LSHIFT | # |  RSHIFT  | RCONTROL | INSERT  | APPLICATION |  NUMBER_L |
+//        |  BT_SEL 0 |   BT_CLR    |    END    |   HOME   | LSHIFT | # |  RSHIFT  | RCONTROL | INSERT  | APPLICATION |  NUMBER_L |
 //                                              |  BASE_L  |  LGUI  | # |   RALT   | SYMBOL_L |
 		bindings = <
-		&kp ESCAPE &kp K_APP  &kp LC(END) &kp LC(HOME) &kp LC(LS(LALT)) /**/ &kp RG(LEFT) &kp RC(RS(TAB)) &kp RC(TAB) &kp RG(RIGHT) &kp BACKSPACE 
-		&kp TAB    &kp PSCRN  &kp PG_DN   &kp PG_UP    &kp DELETE       /**/ &kp LEFT     &kp DOWN        &kp UP      &kp RIGHT     &kp RETURN
-		&bt BT_PRV &bt BT_NXT &kp END     &kp HOME     &kp LSHIFT       /**/ &kp RSHFT    &kp RCTRL       &kp INSERT  &kp K_APP     &tog 3
-					                      &tog 0       &kp LGUI         /**/ &kp SPC      &tog 1
+		&kp ESCAPE   &kp K_APP  &kp LC(END) &kp LC(HOME) &kp LC(LS(LALT)) /**/ &kp RG(LEFT) &kp RC(RS(TAB)) &kp RC(TAB) &kp RG(RIGHT) &kp BACKSPACE 
+		&kp TAB      &kp PSCRN  &kp PG_DN   &kp PG_UP    &kp DELETE       /**/ &kp LEFT     &kp DOWN        &kp UP      &kp RIGHT     &kp RETURN
+		&bt BT_SEL 0 &bt BT_CLR &kp END     &kp HOME     &kp LSHIFT       /**/ &kp RSHFT    &kp RCTRL       &kp INSERT  &kp K_APP     &tog 3
+					                        &tog 0       &kp LGUI         /**/ &kp SPC      &tog 1
 		>;
 		};	
 		
@@ -90,10 +90,10 @@
 //        |  |  |  |        |          | # |          |   F1   | F2  | F3  | F4  |
 //                 | BASE_L | SYMBOL_L | # | NUMBER_L | MOVE_L |
 		bindings = <
-		&trans &trans &trans &trans &trans /**/ &trans &kp F9 &kp F10 &kp F11 &kp F12
-		&trans &trans &trans &trans &trans /**/ &trans &kp F5 &kp F6  &kp F7  &kp F8
-		&trans &trans &trans &trans &trans /**/ &trans &kp F1 &kp F2  &kp F3  &kp F4   
-					         &tog 0 &tog 1 /**/ &tog 2 &tog 3
+		&trans       &trans       &trans       &trans       &trans       /**/ &trans &kp F9 &kp F10 &kp F11 &kp F12
+		&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 /**/ &trans &kp F5 &kp F6  &kp F7  &kp F8
+		&bt BT_CLR   &trans 	  &trans       &trans       &trans       /**/ &trans &kp F1 &kp F2  &kp F3  &kp F4   
+					         				   &tog 0       &tog 1       /**/ &tog 2 &tog 3
 		>;
 		};	
         
